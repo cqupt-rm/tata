@@ -1,0 +1,651 @@
+*{
+	margin: 0;
+	padding:0;
+	text-decoration: none;
+
+}
+img{ 
+	border: 0;/*ie8*/
+ }
+
+body{
+	width:1920px;
+}
+.first{
+	position: relative;
+
+	height: 120px;
+
+}
+.logo{
+	margin-left: 394px;
+	margin-top: 18px;
+	float: left;
+	
+}
+.title{
+	float: left;
+	margin-top:34px;
+	margin-left: 20px;
+	padding-left: 20px;
+	border-left: 1px solid  #D9D9D9;
+}
+
+.QRcode{
+	margin-left: 129px;
+	margin-top: 32px;
+	float: left;
+}
+.telephoneNumber{
+	float: left;
+	margin-top: 38px;
+	margin-left: 14px;
+}
+
+.search{
+	margin-top: 54px;
+	margin-left: 125px;
+	float: left;
+	position: relative;
+}
+.search input{
+	height: 27px;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+}
+.button{
+	position: absolute;
+	top: 2px;
+	right: 0;
+	background-color:#11A14A; 
+	color: #FFFFFF;
+	border: 1px solid #11A14A; 
+	border-radius: 8px;
+	font-size: 18px;
+	padding:2px 5px;
+}
+.button:hover{
+	cursor: pointer;
+}
+.second{
+	background: #11A14A;
+	overflow: hidden;
+	height: 49px;
+}
+.second li {
+	float: left;
+	list-style-type: none;
+	/*color: #FFFFFF;*/
+	height: 100%;
+
+	/*padding: 46px;*/
+
+
+}
+.second li a{
+	text-decoration: none;
+	color: #FFFFFF;
+	display: inline-block;
+	height: 100%;
+	padding:17px 47px;
+
+}
+.second li a:hover{
+	background: #0D803B;
+}
+.second ul{
+	overflow: hidden;
+	margin: 0 auto;
+	width: 1300px;
+	/*margin-left: 394px;*/
+	height: 100%;
+	
+	
+}
+.third {
+	background-image: url(../images/image4.jpg);
+	height: 588px;
+	position: relative;
+}
+.introduce{
+	
+	/*font-family: Microsoft YaHei;*/
+	color: #FFFFFF; 
+	background: rgba(17,161,74,0.7);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B211A14A,endColorstr=#B211A14A);
+	width: 489px;
+	position: absolute;
+	left: 411px;
+	top: 120px;
+	
+}
+.introduce h1{
+  font-family: SimHei;
+  margin-top: 40px;
+  margin-left: 31px;
+}
+.introduce h2{
+	line-height: 40px;
+	margin-left: 31px;
+}
+.introduce p{
+	margin-top: 10px;
+	font-size: 15px;
+	line-height: 20px;
+	margin-left: 31px;
+}
+.knowMore{
+	/*padding-top: 30px;*/
+	line-height: 40px;
+	text-align: center;
+	width: 138px;
+	height: 40px;
+	margin-left: 175px;
+	margin-top: 25px;
+	margin-bottom: 27px;
+	border: 1px solid #FFFFFF;
+	border-radius: 5px;
+}
+.knowMore:hover{
+	color: red;
+	cursor: pointer;
+}
+.fourth{
+	height: 377px;
+	background: #F6F6F6;
+	font-size: 0;/*解决了a标签中插入图片有空隙的问题*/
+	text-align: center;
+	/*padding-top: 93px;*/
+}
+.fourth img{
+	margin-top: 90px;
+	
+	
+}
+.fifth{
+	height: 390px;
+	background-image: url(../images/image11.jpg);
+	position: relative;
+
+}
+
+
+.top_Introduce{
+	background: black;
+	opacity: 0.5;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);/*ie8*/
+	
+	height: 100%;
+	}
+.first_p{
+	font-size: 35px;
+	text-align: center;
+	font-family: Microsoft YaHei;
+	margin-bottom: 10px;
+	
+}
+.second_p{
+	text-align: center;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+	
+}
+.third_p{
+	/*font-family: SimHei;*/
+	font-weight: 400;
+	font-family:"宋体";
+	line-height: 32px;
+	text-indent: 33px;
+	
+}
+/*为了使文本颜色不受背景透明的干扰 因此将黑色透明背景
+和文本分离在两个div中，并对文本div使用绝对定位*/
+.text{
+	text-align:left;
+	color: #FFFFFF;
+	position: absolute;
+	top:77px;
+	width:1110px;
+	left: 410px;
+}
+.content{
+	width: 1099px;
+	margin: 0 auto;
+	position: relative;
+
+	
+}
+.sixth{
+	
+	
+}
+.first_span{
+	color: #0EA148;
+	font-weight: bold;
+	font-size: 22px;
+	font-family: Microsoft YaHei;
+
+
+}
+.second_span{
+	color: #989898;
+	font-size: 19px;
+	font-family: Microsoft YaHei;
+	margin-left: 10px;
+
+
+}
+.third_span{
+	color: #EAEAEA;
+	margin-left: 10px;
+
+}
+.fourth_span{
+	color: #FA980F;
+	font-family: Microsoft YaHei;
+	font-size: 19px;
+	position: absolute;
+	right: 0;
+	top: 5px;
+}
+.sixth_title{
+	margin-top: 60px;
+}
+
+.appli_introduce{
+	width: 505px;
+	height: 198px;
+	background-color: #10A14A;
+	overflow: hidden;
+	margin-left: 13px;
+	float: left;
+
+}
+.dl1,.dl2,.dl3,.dl4,.dl6,.dl7,.dl8{
+	float: left;
+}
+.dl5{
+	float: right;
+}
+.dl6{
+	clear: both;
+}
+.dl2,.dl3,.dl7,.dl8{
+	margin-left: 13px;
+}
+a{
+	text-decoration: none;
+
+}
+dl{
+	position:relative;
+}
+dt{
+	position: absolute;
+	top: 168px;
+	width: 100%;
+	height: 30px;
+	background-color: rgba(0,0,0,0.5);
+	/*ie8*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	text-align: center;
+	overflow: hidden;
+	transition: all 0.35s ease-in-out;
+
+}
+dt p{
+	height: 32px;
+	color: #fff;
+	position: relative;
+	top: 5px;
+
+	
+}
+dt span{
+	background-color: #ffae00;
+	padding: 3px 15px;
+	color: #fff;
+}
+dd{
+	font-size: 0;
+	margin-bottom: 13px;
+}
+dl a:hover dt{
+	top: 0px;height: 200px;
+}
+dl a:hover dt p{
+	margin-top: 75px;
+}
+.appli_introduce h3{
+	color: #fff;
+	margin-top: 45px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-family: Microsoft YaHei;
+}
+.appli_introduce p{
+	color: #fff;
+	width: 326px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 25px;
+}
+.list1 div{
+	float: left;
+	margin-left: 35px;
+}
+.list1 div p{
+	font-family:Microsoft YaHei;
+	color:#c1c1c1;  
+	text-align: center;
+
+}
+.list2 div{
+	float: left;
+	margin-left: 35px;
+}
+.list2 div p{
+	font-family:Microsoft YaHei;
+	color:#c1c1c1;  
+	text-align: center;
+}
+.list3 div{
+	float: left;
+	margin-left: 35px;
+}
+.list3 div p{
+	font-family:Microsoft YaHei;
+	color:#c1c1c1;  
+	text-align: center;
+}
+._list1 div{
+	float: left;
+	margin-left: 35px;
+}
+._list1 div p{
+	font-family:Microsoft YaHei;
+	color:#c1c1c1;  
+	text-align: center;
+}
+._list3 div{
+	float: left;
+	margin-left: 35px;
+}
+._list3 div p{
+	font-family:Microsoft YaHei;
+	color:#c1c1c1;  
+	text-align: center;
+}
+.arrow{
+	position: absolute;
+	/*top: 720px;*/
+	top:53px;
+	/*z-index: 2;*/
+}
+#container{
+	
+	height: 172px;
+	position: relative;
+}
+#showcase{
+	width: 1099px;
+	overflow: hidden;
+	height: 172px;
+	position: relative;
+}
+#prev{
+	left: -31px;
+
+}
+#next{
+	right: -31px;
+}
+#list{
+	overflow: hidden;
+	width: 5495px;
+	position: absolute;
+
+}
+#buttons { 
+	
+	width: 100%;
+	margin-top: 48px;
+	margin-left:521px;
+	
+
+	
+
+}
+#buttons span { 
+	cursor: pointer; 
+	float: left; 
+	border: 1px solid #fff; 
+	width: 13px; 
+	height: 13px; 
+	border-radius: 50%; 
+	background: #c1c1c1; 
+	margin-right: 5px;
+	/*ie8*/
+	behavior: url(csspie/PIE.htc);
+
+}
+#buttons .on {  
+	background:green;
+}
+#seventh{
+	height: 498px;
+	background-color: #F2F2F2;
+	margin-top: 100px;
+	position: relative;
+	
+}
+#design_team{
+	text-align: center;
+}
+#design_team img{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+#designer{
+	width: 1099px;
+	position: relative;
+	height: 236px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*.middle_designer{
+	height: 186px;
+	width: 221px;
+}
+.side_designer{
+
+}*/
+#designer_list{
+	position: absolute;
+	width: 2600px;
+
+}
+#designer_list img{
+	margin: 0 50px;
+	float: left;
+}
+#_prev{
+	left: 378px;
+	top: 210px;
+}
+#_next{
+	right: 378px;
+	top: 210px;
+}
+#name{
+	position: relative;
+	width: 216px;
+	overflow: hidden;
+	height: 25px;
+	left: 853px;
+}
+#name_list p{
+	text-align: center;
+	width: 216px;
+	
+	float: left;
+
+}
+#name_list{
+	position: absolute;
+	width: 1512px;
+	
+
+}
+.designerName {
+	font-family:Microsoft YaHei; 
+	font-size: 18px; 
+}
+.designerName span{
+	color: green;
+
+}
+.ptext{
+	padding-top: 34px;
+	width: 933px;
+	text-align: center;
+	margin: 0 auto;
+}
+#eight{
+	width: 1099px;
+	margin:0 auto;
+	
+}
+#eight_title{
+	position: relative;
+}
+#eight_introduce div{
+	/*padding:12px 40px;*/
+	margin-left: 42px;
+	margin-top: 28px;
+	width: 471px;
+	float: left;
+	position: relative;
+	font-family: Microsoft YaHei;
+	font-size: 12px;
+	line-height: 25px;
+}
+#eight_introduce p{
+	margin-left: 5px;
+	width: 293px;
+	float: left;
+}
+#eight_introduce p span{
+	font-size: 16px;
+
+}
+#eight_introduce img{
+	float: left;
+}
+.eight_more{
+	position: absolute;
+	bottom: 0;
+	left: 177px;
+}
+#ninth{
+	height: 537px;
+	background-image: url(../images/image40.jpg);
+	margin-top: 250px;
+}
+#contact{
+	background: rgba(0,0,0,0.5);
+	/*ie8*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+    height: 100%;
+    position: relative;
+}
+#contact_us{
+	width: 165px;
+	margin: 0 auto;
+	padding-top:36px; 
+}
+#form{
+	position: relative;
+	width: 456px;
+	left: 300px;
+	top: 60px;
+
+}
+.form_text{
+	height: 42px;
+	text-indent: 14px;
+}
+#form input{
+	border-left: 0;
+	border-right: 0;
+	width: 456px;
+	display: block;
+	border-top:1px solid #777777;
+	border-bottom:1px solid #777777;
+
+}
+#form textarea{
+	height: 129px;
+	width: 456px;
+	border-left: 0;
+	border-right: 0;
+	border-top:1px solid #777777;
+	border-bottom:1px solid #777777; 
+	padding-top: 13px; 
+	text-indent: 14px;
+
+}
+#submit{
+	position: absolute;
+	top: 261px;
+	background-color: #F29400;
+	height: 42px;
+	color: #FFFFFF;
+	font-size: 22px;
+	letter-spacing: 10px;
+}
+#information{
+	position: absolute;
+	left: 1039px;
+	top: 155px;
+}
+#information span{
+	color: #FFFFFF;
+	position: relative;
+	top: -14px;
+}
+#tenth{
+	height: 111px;
+	background-color: #333333;
+	text-align: center;
+}
+#navigation{
+	width: 963px;
+	margin: 0 auto;
+	position: relative;
+	top: 23px;
+	overflow: hidden;
+}
+#navigation li{
+	float: left;
+	list-style-type: none;
+	margin:0 16px;
+
+}
+#navigation li a{
+	
+	color: #FFFFFF;
+	
+
+}
+#copyright{
+	margin-top: 50px;
+	color: #FFFFFF;
+}
+
+
+
+
+
+
