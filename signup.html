@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>注册</title>
+    <link href="css/signup.css" rel="stylesheet" />
+    <script src="js/zepto.js"></script>
+    <script src="js/signup.js"></script>
+</head>
+
+<body sroll="no" onclick="onload">
+    <form name="form1" onsubmit="return checkreg()" action="https://junqiunblog.cn/xys/Api/user/registerOrUpdate.php" method="get">
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span> 姓名</span>
+                </div>
+                <div class="div_c_r">
+                    <input type="text" style="width:calc(100% - 16px);" name="name" id="name" placeholder="请填写真实姓名">
+                    <span style="float: right;margin-top: -30px;background:#fff" id="tish"></span></input>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span>密码</span>
+                </div>
+                <div class="div_c_r">
+                    <input type="password" style="width:calc(100% - 16px);" name="password" id="password" onkeydown="" value="" placeholder="6~20位数字、字符任意组合">
+                    <span style="float: right;margin-top: -30px;background:#fff" id="ts"></span></input>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span style="width:70px;">确认密码</span>
+                </div>
+                <div class="div_c_r">
+                    <input type="password" style="width:calc(100% - 16px);" name="passagain" id="Pwdagain" onkeydown="" value="" placeholder="请再次输入密码">
+                    <span style="float: right;margin-top: -30px;background:#fff" id="tishi"></span></input>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span style="width:70px;">手机号码</span>
+                </div>
+                <div class="div_c_r">
+                    <input type="tel" style="width:calc(100% - 16px);" id="phone" name="phone" onkeydown="" id="phone" value="" placeholder="请输入手机号码">
+                    <span style="float: right;margin-top: -30px;background:#fff" id="tss"></span>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span style="width:70px;">验证码</span>
+                </div>
+                <div class="div_c_r">
+                    <input style="float: right;    text-align: center;font-size: 11px;padding: 4px 9px;width:calc(50% - 16px);background: #05a0e0;color: #fff;" id="dynamic" value="发送验证码" type="button" onclick="sendMessage(5)">
+                    <input style="width:calc(50% - 10px);" type="tel" name="verifyResult" onblur="" onkeydown="" id="code" placeholder="请输入验证码">
+                    <span style="margin-top: -30px;background:#fff" id="tsi"></span>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="div_f">
+            <div class="div_col" id="me">
+                <div class="div_c_l"><span>性别</span>
+                </div>
+                <div class="div_c_r" style="padding: 0;">
+                    <div style="margin-left: 28px;" class="inp_radio">
+                        <div class="checkboxforget1">
+                            <input type="radio" id="Remember1" name="sex" id="sex" value="0" checked />
+                            <label for="Remember1"></label>
+                        </div>
+                        男
+                    </div>
+                    <div style="margin-left: 8px;" class="inp_radio">
+                        <div class="checkboxforget1">
+                            <input type="radio" id="Remember2" name="sex" id="sex" value="1" />
+                            <label for="Remember2"></label>
+                        </div>
+                        女
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <button id="submit" class="btn_1">注册</button>
+    </form>
+</body>
+
+</html>

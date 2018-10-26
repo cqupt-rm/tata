@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>个人信息</title>
+    
+    <link href="css/vmcss2.css"  rel="stylesheet" type="text/css">
+    <link href="css/main2.css"  rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+    <script src="js/zepto.js" type="text/javascript"></script>
+    <style type="text/css" media="screen">
+    body {
+
+        padding-bottom: 70px;
+        /*有底部固定导航条时设置*/
+    }
+    a{
+    	text-decoration:none;
+    }
+    </style>
+</head>
+
+<body>
+    <article class="breadcrumb " id="breadcrumb">
+        <header>
+            <a id="btn-back" href="javascript:history.go(-1);"></a>
+            <em id="pageTitle">我的信息</em>
+        </header>
+        <!-- 21030531-½Ý¾¶À¸-start -->
+        <section class="shortcut" id="shortcut-btn">
+            <ul>
+                <!-- ½öÕ¹Ê¾É¸Ñ¡°´Å¥ -->
+                <li id="btn-cart">
+                    <a id="prdDetailShoppingCart" href="#" class="icon-shoppingCart" title="¹ºÎï³µ">
+						<span id="cartNum">0</span>
+					</a>
+                </li>
+                <!-- ½öÕ¹Ê¾Ê×Ò³°´Å¥-->
+            </ul>
+        </section>
+        <!-- 21030531-½Ý¾¶À¸-end -->
+    </article>
+    <div class="hr-150-1"></div>
+    <!-- 21030314-ÓÃ»§ÐÅÏ¢-start -->
+    <section class="userinfo userinfo-oldver" id="userInfo">
+        <div class="h">
+            <a href="signin.html"><span id="btn">登录/注册</span></a>
+        </div>
+    </section>
+    <!-- 20140521-¸öÈËÖÐÐÄ-²Ëµ¥-end -->
+    <section class="mc-menu">
+        <ul>
+            <li>
+                <a id="orderHref" href="myRelease.html">
+                    <p class="m-title"><span>我的发布</span></p>
+                    <s class="m-arrows"><i class="icon-arrows-right"></i></s>
+                </a>
+            </li>
+            <li>
+                <a id="bookingHref" href="myDynamic.html">
+                    <p class="m-title"><span>我的动态</span></p>
+                    <s class="m-arrows"><i class="icon-arrows-right"></i></s>
+                </a>
+            </li>
+            <li>
+                <a id="addressHref" href="myGrap.html">
+                    <p class="m-title"><span>我的抢单</span></p>
+                    <s class="m-arrows"><i class="icon-arrows-right"></i></s>
+                </a>
+            </li>
+         
+        </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    <p class="m-title"><span>关于我们</span></p>
+                    <s class="m-arrows"><i class="icon-arrows-right"></i></s>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.junqiunblog.cn/xys/out.php">
+                    <p class="m-title"><span 
+                    	id="logOut">退出登录</span></p>
+                    <s class="m-arrows"><i class="icon-arrows-right"></i></s>
+                </a>
+            </li>
+            
+            <section id="bottom-area" class="bottom-area">
+               
+                <p class="copyright"><span>Copyright &copy; 2017-2018</span></p>
+            </section>
+
+
+
+            <div class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="min-height: 0">
+        <ul class="nav  nav-tabs" style="border: 0;margin-bottom:0">
+            <li><a href="index.html"><i class="fa fa-bicycle"></i></a></li>
+            <li><a href="dynamic.html"><i class="fa fa-commenting"></i></a></li>
+            <li class="active"><a href="info.html"><i class="fa fa-user-circle"></i></a></li>
+        </ul>
+    </div>
+
+
+<script type="text/javascript">
+//获取数据并用handlebars渲染到前端
+$.ajax({
+
+    url: "https://junqiunblog.cn/xys/Api/user/get_info.php",
+    type: "GET",
+    dataType: 'jsonp',
+    crossDomain: true,
+    //jsonp: 'callback',默认参数名callback
+    success: function(data) {
+        console.log(data)
+        if(data.code==200){
+        	var name=data.message[0].name
+        	$('#btn').html('欢迎您,'+name)
+        	$('#btn').parent().attr("href","javascript:void(0);");
+        }
+    }
+})
+
+</script>
+
+</body>
+
+</html>

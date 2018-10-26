@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>校内达</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+    <script src="js/zepto.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="js/handlebars.js" type="text/javascript"></script>
+    <script id="info-template" type="text/x-handlebars-template">
+        <ul class="re-ul">
+            {{#each message}}
+            <li class="re-li">
+                <div class="info">
+                    <div>
+                        <span class="name">{{nameFb}}</span>
+                        <span class="time"></span>
+                    </div>
+                    <div class="location">
+                        <span class="address">{{address}}</span>
+                        <span class="run" data-id="{{Id}}">抢</span>
+                    </div>
+                </div>
+                <div class="description">
+                    {{content}}
+                </div>
+                <div class="details">
+                    <span class="de-left">
+                        {{status}}
+                    </span>
+                    <span class="de-right">
+                        赚{{price}}元
+                    </span>
+                </div>
+            </li>
+            <hr> {{/each}}
+        </ul>
+    </script>
+    <style type="text/css" media="screen">
+    body {
+
+        padding-bottom: 70px;
+        /*有底部固定导航条时设置*/
+    }
+    </style>
+</head>
+
+<body>
+    <div class="banner" id="container">
+        <div id="list">
+            <img src="img/3.jpg" alt="3" />
+            <img src="img/1.jpg" alt="1" />
+            <img src="img/2.jpg" alt="2" />
+            <img src="img/3.jpg" alt="3" />
+            <img src="img/1.jpg" alt="1" />
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+        </div>
+        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+    </div>
+    <div class="project">
+        <div class="left"><a class="pro-a" href="release.html" style="text-decoration:none;"><i class="fa fa-rocket"></i>发布跑腿</a></div>
+        <div class="right"><a class="pro-a" href="releaseDynamic.html" style="text-decoration:none;"><i class="fa fa-commenting"></i>发布动态</a></div>
+    </div>
+    <div class="release" id="info">
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="min-height: 0">
+        <ul class="nav  nav-tabs" style="border: 0">
+            <li class="active"><a href="index.html"><i class="fa fa-bicycle"></i></a></li>
+            <li><a href="dynamic.html"><i class="fa fa-commenting"></i></a></li>
+            <li><a href="info.html"><i class="fa fa-user-circle"></i></a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    //获取数据并用handlebars渲染到前端
+    $.ajax({
+        url: "https://junqiunblog.cn/xys/Api/xld/getDdAll.php",
+        type: "GET",
+        dataType: 'jsonp',
+        crossDomain: true,
+        //jsonp: 'callback',默认参数名callback
+        success: function(data) {
+            console.log(data)
+            var t = $('#info-template').html()
+            var f = Handlebars.compile(t)
+            var h = f(data)
+            $('#info').html(h)
+            $('.de-left').each(function() {
+
+
+                if ($(this).html().trim() == '已被抢') {
+                    $(this).parent().siblings('.info').children('.location').children('.run').hide()
+                }
+            })
+
+        }
+    })
+    $(".release").on('click', '.run', function() {
+        var $that = $(this)
+        var id = $(this).data('id')
+        console.log(id)
+        $.ajax({
+            url: "https://junqiunblog.cn/xys/Api/xld/insertdd.php",
+            type: "post",
+            data: { id: id },
+            dataType: 'jsonp',
+            crossDomain: true,
+            //jsonp: 'callback',默认参数名callback
+            success: function(data) {
+                console.log(data)
+                if (data.code == 200) {
+                    alert('抢单成功，请到我的订单中查看具体信息！')
+                    $that.parent().parent().siblings('.details').children('.de-left').html('已被抢')
+                    $that.css("background-color", 'red')
+                    $that.hide()
+                }
+            }
+        })
+    });
+    </script>
+</body>
+
+</html>

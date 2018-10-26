@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>我的抢单</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+    <script src="js/zepto.js" type="text/javascript"></script>
+    <script src="js/handlebars.js" type="text/javascript"></script>
+    <script id="info-template" type="text/x-handlebars-template">
+       <ul class="re-ul">
+            {{#each message}}
+            <li class="re-li">
+                <div class="info">
+                    <div>
+                        <span class="name">{{name}}</span>
+                        <span class="time">抢单时间:{{time}}</span>
+                    </div>
+                </div>
+                <div class="description">
+                    快递公司:{{content}}
+                </div>
+                <div class="code">
+                    快递编号:{{number}}
+                </div>
+                <div class="tel">
+                    电话:{{phone}}
+                </div>
+                <div class="status">
+                    订单状态:{{status}}
+                </div>
+                <div class="status">
+                    订单价格:{{price}}
+                </div>
+                <div class="status">
+                    送达地址:{{address}} {{dormNum}}
+                </div>
+
+            </li>
+            <hr> {{/each}}
+        </ul>
+    </script>
+    <style type="text/css" media="screen">
+    body {
+        padding-top: 70px;
+        /*有顶部固定导航条时设置*/
+        padding-bottom: 70px;
+        /*有底部固定导航条时设置*/
+    }
+
+    #goback {
+        position: fixed;
+        top: 2%;
+        left: 5%;
+        color: black;
+        font-size: 2rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <a href="javascript:history.go(-1)" title=""><i id="goback" class="fa fa-mail-reply">我的抢单</i></a>
+    </div>
+    <div class="release" id="info">
+    </div>
+</body>
+<script type="text/javascript">
+//获取数据并用handlebars渲染到前端
+$.ajax({
+    url: "https://junqiunblog.cn/xys/Api/xld/get_dd.php?own=own",
+    type: "GET",
+    dataType: 'jsonp',
+    crossDomain: true,
+    //jsonp: 'callback',默认参数名callback
+    success: function(data) {
+        console.log(data)
+        var t = $('#info-template').html()
+        var f = Handlebars.compile(t)
+        var h = f(data)
+        $('#info').html(h)
+    }
+})
+</script>
+
+</html>

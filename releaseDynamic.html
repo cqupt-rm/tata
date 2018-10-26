@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>发布动态</title>
+    <link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+    <link href="css/demo.css" rel="stylesheet" />
+    <script src="js/zepto.js"></script>
+    <style type="text/css" media="screen">
+    #txtarea {
+        width: 80%;
+        height: 2rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+
+<body>
+    <form id="dynamic" name="form1" onsubmit="return checkreg()" method="post">
+        <div id="dreg">
+            <div class="regitem-title">
+                <div class="regtext-title">
+                    <h2>今天想说点什么</h2></div>
+            </div>
+            <textarea id="txtarea" name="txtarea" placeholder="请在这里输入现在的心情"></textarea>
+            <span style="background:#fff;margin-left: 1rem;" id="tss"></span>
+            <button id="submit" class="btn_1" type="submit">发布心情</button>
+        </div>
+        <a href="javascript:history.go(-1)" title=""><i id="goback" class="fa fa-mail-reply">发布动态</i></a>
+    </form>
+    <script type="text/javascript">
+    function checkreg() {
+
+        if ($('#txtarea').val() == '') {
+            document.getElementById("tss").innerHTML = "<font color='red'>心情不能为空!</font>";
+
+            return false;
+        } else {
+            alert('心情发布成功')
+
+        }
+    }
+    $('#dynamic').submit(function() {
+        $.ajax({
+            url: "https://junqiunblog.cn/xys/Api/dt/postdt.php",
+            type: "post",
+            dataType: 'jsonp',
+            crossDomain: true,
+
+            data: { content: $("#txtarea").val() },
+            //jsonp: 'callback',默认参数名callback
+            success: function(data) {
+                console.log(data)
+
+                if (data.code == 200) { location.href = "dynamic.html" }
+
+
+            }
+        })
+
+        return false
+
+    })
+    </script>
+</body>
+
+</html>

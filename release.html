@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>帮忙跑腿</title>
+    <link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+    <link href="css/demo.css" rel="stylesheet" />
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/dormitoryselect.js"></script>
+</head>
+
+<body>
+    <form id="form1" name="form1" onsubmit="return checkreg()" action="https://junqiunblog.cn/xys/Api/xld/insert.php" method="post">
+        <div id="dreg">
+            <div class="regitem-title">
+                <div class="regtext-title">
+                    <h2>信息填写</h2></div>
+            </div>
+            <div class="regitem">
+                <span>姓名</span>
+                <input type="text" id="name" name="name" value="">
+            </div>
+            <div class="regitem">
+                <span>取货电话</span>
+                <input type="text" id="phone" name="phone" value="" maxlength="11">
+                <span style="background:#fff;margin-left: 1rem;" id="tss"></span>
+            </div>
+            <div class="regitem">
+                <span>打赏路费</span>
+                <input type="text" id="money" name="money" value="">
+            </div>
+            <div class="regitem">
+                <span>快递编号</span>
+                <input type="text" id="number" name="number" value="">
+            </div>
+            <div class="regitem">
+                <span>选择地址</span>
+                <div id="dorm">
+                    <select name="dormitory" id="selProvince" onChange="getdormitory(this.options[this.selectedIndex].value)">
+                        <option value="请选择">-请选择-</option>
+                        <option value="学生公寓">学生公寓</option>
+                        <option value="教师公寓">教师公寓</option>
+                        <option value="其它">其它</option>
+                    </select>
+                    <select name="dormNum" id="seldorm">
+                        <option>-请选择-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="regitem">
+                <span class="regitem-detail">详细信息</span>
+                <textarea id="txtarea" name="txtarea" placeholder="帮取快递，带饭，代买等(请不要在此输入快递编号，电话号码)"></textarea>
+            </div>
+            <button id="submit" class="btn_1" type="submit">提交订单</button>
+        </div>
+        <a href="javascript:history.go(-1)" title=""><i id="goback" class="fa fa-mail-reply">帮忙跑腿</i></a>
+    </form>
+    <script type="text/javascript">
+    function checkreg() {
+        var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+        if (!myreg.test(document.form1.phone.value)) {
+            document.getElementById("tss").innerHTML = "<font color='red'>手机号码错误</font>";
+
+            return false;
+        } else {
+            
+            location.href = "index.html"
+        }
+    }
+    </script>
+</body>
+
+</html>

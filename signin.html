@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css" tppabs="http://www.17sucai.com/preview/266121/2017-06-30/login/css/login.css" />
+    <script src="js/zepto.js"></script>
+</head>
+
+<body>
+    <form name="signIn" id="signin" onsubmit="" action="https://junqiunblog.cn/xys/Api/user/registerOrUpdate.php" method="post">
+        <div class="login">
+            <div class="welcome"><img src="img/welcome.png" tppabs="http://www.17sucai.com/preview/266121/2017-06-30/login/images/welcome.png"></div>
+            <div class="login-form">
+                <div class="login-inp">
+                    <label>手机号码</label>
+                    <input id="phone" type="text" placeholder="">
+                </div>
+                <div class="login-inp">
+                    <label>密码</label>
+                    <input id="password" type="password" placeholder="">
+                </div>
+                <div class="login-inp">
+                    <button style="background-color:rgba(0,0,0,0)">立即登录</button>
+                </div>
+            </div>
+            <div class="login-txt"><a href="signup.html">立即注册</a>|<a href="#">忘记密码？</a></div>
+        </div>
+    </form>
+    <script type="text/javascript">
+    $('#signin').submit(function() {
+        $.ajax({
+            url: "https://junqiunblog.cn/xys/Api/user/loginx.php",
+            type: "post",
+            dataType: 'jsonp',
+            crossDomain: true,
+
+            data: { phone: $("#phone").val(), password: $("#password").val() },
+            //jsonp: 'callback',默认参数名callback
+            success: function(data) {
+                console.log(data)
+                alert(data.message)
+                if (data.code == 200) {
+                    location.href = "index.html"
+                }
+
+
+            }
+        })
+
+        return false
+
+    })
+    </script>
+</body>
+
+</html>
